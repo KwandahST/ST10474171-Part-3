@@ -1,0 +1,413 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/**Styling slide show*/
+.slideshow-container{
+    position: relative;
+    margin: 5px 0 0 0;
+    max-height: 500px;
+}
+
+.myslides{
+    display: none;
+}
+
+.prev,
+.next{
+    cursor: pointer;
+    position: absolute;
+    top: 50px;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: azure;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0,6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next 
+{
+    right: 0;
+    border-radius: 3px 0 0 3x;
+}
+
+.prev:hover,
+.next:hover 
+{
+    background-color: black;
+}
+
+.text 
+{
+    color: antiquewhite;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+}
+
+.numbertext 
+{
+    color: aliceblue;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.dot 
+{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: aliceblue;
+    border-radius: 50px;
+    display: inline-block;
+    transition: background-colour 0.6s ease;
+}
+
+.active,
+.dot:hover 
+{
+    background-color: azure;
+}
+
+.fade 
+{
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade 
+{
+    from 
+    {
+        opacity: .4;
+    }
+    to
+    {
+        opacity: 1;
+    }
+}
+        
+          body
+        {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: darkgoldenrod;
+            background-image: url(../Img/IC9.jpg);
+            color: rgb(15, 15, 15);          
+        }
+        nav {
+          background-color: rgb(205, 84, 76);
+          box-shadow: 0, 2px 6px rgb(140, 120, 67, 0.1);
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+        }
+
+        .navbar 
+        {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 30px;
+          height: 60px;
+        }
+
+        .nav-links
+         {
+            list-style: none;
+            display: flex;
+            gap: 90px;
+         }
+
+         .nav-links li {
+            position: relative;
+         }
+
+         .nav-links a 
+         {
+            color: cornsilk;
+            text-decoration: none;
+            padding: 8px 12px;
+            display: block;
+            transition: background 0.3s;
+         }
+
+         .nav-links a:hover 
+         {
+            background-color: fuchsia;
+            border-radius: 10px;
+         }
+
+         .submenu
+         {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0%;
+            background-color: cadetblue;
+            list-style: none;
+            min-width: 4px;
+            border-radius: 4px;
+            z-index: 100;
+         }
+
+          .submenu li a 
+          {
+            padding: 10px 15px;
+            color: darkturquoise;
+          }
+
+          .submenu li a:hover
+         {
+            background-color: darkorchid;
+          }
+
+           @media (min-width:769px){
+            .nav-links li:hover>.submenu{
+                display: block;
+            }
+           }
+
+           .hamburger
+           {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+           }
+
+           .hamburger span {
+            height: 3px;
+            width: 25px;
+            background-color: darkmagenta;
+            margin: 4px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+           }
+
+          @media (max-width: 768px)
+          {
+            .hamburger 
+            {
+              display: flex;
+            }
+
+            .nav-links
+            {
+              position: absolute;
+              top: 60px;
+              left: 0;
+              background-color: blanchedalmond;
+              width: 100%;
+              flex-direction: column;
+              gap: 0;
+              max-height: 0;
+              overflow: hidden;
+              transition: max height 0.3s ease-out;
+            }
+
+            .nav-links a:hover 
+            {
+              background-color: bisque;
+              border-radius: 4px;
+            }
+
+            .nav-links .open
+            {
+              max-height: 500px;
+            }
+
+            .nav-links li 
+            {
+              width: 100%
+            }
+
+            .submenu 
+            {
+              position: static;
+              display: none;
+              background-color: darkred;
+            }
+
+            .submenu.open 
+            {
+              display: block;
+            }
+
+            .nav links a 
+            {
+              padding: 15px;
+            }
+          }
+          
+          .hamburger.active span:nth-child(1){
+            transform: rotate(45deg) translate(5px, 5px)
+          }
+
+          .hamburger.active span:nth-child(2){
+            opacity: 0;
+          }
+
+          .hamburger.hamburger.active span:nth-child(3){
+            transform: rotate(-45deg) translate(5px, -5px);
+          }
+
+          #fname,
+          #lmame,
+          #subject
+          {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid darkgray;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+          }
+
+          #submit 
+          {
+            background-color: darkkhaki;
+            color: oldlace;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+
+          #fname:hover,
+          #lname:hover,
+          #ename:hover,
+          #subject:hover 
+          {
+            background-color: cornflowerblue;
+          }
+
+          .container 
+          {
+            border-radius: 5px;
+            background-color: deepskyblue;
+            padding: 25px;
+            margin: 10px 500px 100px 500px;
+          }
+
+          /**Footer styling starts here*/
+          footer
+          {
+            background-color: gray;
+            color: oldlace;
+            padding: 60px 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+          }
+
+          .footer-logo h2
+          {
+            font-size: 24px;
+            margin: 10px;
+            color: fuchsia;
+          }
+
+          .footer-logo h2 
+          {
+            font-size: 24px;
+            margin: 10px;
+            color: blueviolet;
+          }
+
+          .footer logo p 
+          {
+            font-size: 14px;
+            line-height: 1.6;
+            color: deeppink;
+          }
+
+          .footer-links ul 
+          {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li 
+        {
+            margin-bottom: 10px;
+        }
+
+        .footer links ul li a 
+        {
+            color: darkslateblue;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links ul li a:hover 
+        {
+            color: rebeccapurple;
+        }
+
+        .footer.contact p 
+        {
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        .footer-newsletter input[type="email"] 
+        {
+            padding: 10px;
+            width: 70%;
+            border: none;
+            border-radius: 4px 0 0;
+        }
+
+        .footer-newsletter button 
+        {
+            padding: 10px 20px;
+            border: none;
+            background-color: aqua;
+            color: black;
+            border-radius: 0 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .footer-newsletter button:hover 
+        {
+            background-color: coral;
+        }
+
+        .footer-bottom 
+        {
+            background-color: black;
+            text-align: center;
+            padding: 15px;
+            font-size: 13px;
+            color: grey;
+        }
+
+        @media (max-width: 760px) {
+            footer {
+                text-align: center;
+            }
+            .footer-newsletter input[type="email"] {
+                width: 100%;
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+            .footer-newsletter button {
+                width: 100%;
+                border-radius: 4px;
+            }
+        }
+        
+           
